@@ -1,0 +1,18 @@
+name: Test
+
+on:
+  - push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ./
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          repo: 'bulevip/bulevipcom'
+          dir: 'src/'
+          base_branch: 'develop'
+          days_old: '100'
