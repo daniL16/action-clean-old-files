@@ -4,22 +4,19 @@ description: 'Set approved label and automerge'
 inputs:
    GITHUB_TOKEN:
      description: 'Github token'
-     required: false
+     required: true
    repo:
      description: 'Repository'
-     required: false
+     required: true
    dir:
       description: 'Directory'
-      required: false
+      required: true
    base_branch:
       description: 'Github token'
-      required: false
-      default: 'develop'
+      required: true
   days_old:
       description: 'Days old to delete'
-      required: false
-      default: '120'
-
+      required: true
 runs:
    using: 'docker'
    image: 'Dockerfile'
@@ -29,3 +26,7 @@ runs:
       - ${{ inputs.dir }}
       - ${{ inputs.base_branch }}
       - ${{ inputs.days_old }}
+
+branding:
+  icon: 'tag'
+  color: 'green'
