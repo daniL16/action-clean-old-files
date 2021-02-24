@@ -4,13 +4,13 @@ description: 'Set approved label and automerge'
 inputs:
    GITHUB_TOKEN:
      description: 'Github token'
-     required: true
+     required: false
    repo:
      description: 'Repository'
-     required: true
+     required: false
    dir:
       description: 'Directory'
-      required: true
+      required: false
    base_branch:
       description: 'Github token'
       required: false
