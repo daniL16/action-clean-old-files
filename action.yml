@@ -14,7 +14,7 @@ inputs:
    base_branch:
       description: 'Github token'
       required: true
-  days_old:
+   days_old:
       description: 'Days old to delete'
       required: true
 runs:
