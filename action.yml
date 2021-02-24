@@ -22,7 +22,7 @@ runs:
    image: 'Dockerfile'
    args:
       - ${{ inputs.GITHUB_TOKEN }}
-      - ${{ inputs.repo}}
+      - ${{ inputs.repo }}
       - ${{ inputs.dir }}
       - ${{ inputs.base_branch }}
       - ${{ inputs.days_old }}
