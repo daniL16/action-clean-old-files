@@ -7,7 +7,17 @@ export DIR="$3"
 export DAYS="$5"
 
 # borrar los archivos con más de x dias de antiguedad
-echo "${DAYS}";
-find "${DIR}" -type f -mtime +"${DAYS}" -exec rm -vf {} \;
-ls -la  "${DIR}"
+cd ${DIR};
+for file in *.php ;
+do
+  dateFile=$(echo ${file} | tr -dc '0-9');
+  dateCreated=$(date -d ${dateFile::-6} +%s)
+  now=$(date -d 'now' +%s)
+  days=$(( (now - dateCreated) / 86400 ))
+  if [ $days -gt ${DAYS} ]
+  then
+    rm -v $file
+  fi
+done;
+
 }
