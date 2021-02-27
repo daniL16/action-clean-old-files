@@ -1,5 +1,5 @@
-name: 'Set approved label and automerge'
-description: 'Set approved label and automerge'
+name: 'Delete old files from a folder'
+description: 'Delete files that were created than x days ago'
 
 inputs:
    GITHUB_TOKEN:
@@ -9,12 +9,17 @@ inputs:
       description: 'Directory'
       required: true
    base_branch:
-      description: 'Github token'
+      description: 'Base branch to pull request'
       required: false
       default: 'develop'
    days_old:
       description: 'Days old to delete'
-      required: true
+      required: false
+      default: '120'
+   pr_title:
+     description: 'Pull request title'
+     required: false
+     default: 'Delete old files'
 runs:
    using: 'docker'
    image: 'Dockerfile'
@@ -23,6 +28,7 @@ runs:
       - ${{ inputs.dir }}
       - ${{ inputs.base_branch }}
       - ${{ inputs.days_old }}
+      - ${{ inputs.pr_title }}
 
 branding:
   icon: 'tag'
