@@ -8,5 +8,5 @@ export DAYS="$5"
 
 # borrar los archivos con más de x dias de antiguedad
 find "${DIR}" -type f -mtime +"${DAYS}" -exec rm -vf {} \;
-
+ls -la  "${DIR}"
 }
