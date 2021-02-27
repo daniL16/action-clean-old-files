@@ -3,8 +3,10 @@ source "$PR_SIZE_LABELER_HOME/src/github.sh"
 main(){
 
 export GITHUB_TOKEN="$1"
-export DIR="$3"
-export DAYS="$5"
+export DIR="$2"
+export DAYS="$4"
+
+git checkout -b delete_old_migrations;
 
 # borrar los archivos con más de x dias de antiguedad
 cd ${DIR};
@@ -19,5 +21,9 @@ do
     rm -v $file
   fi
 done;
+
+git add . ;
+git commit -m "delete old migrations"
+github::create_pr $3 'delete_old_migrations'
 
 }

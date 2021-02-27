@@ -9,4 +9,4 @@ github::create_pr(){
   data="{\"base\":\"${base_branch}\",\"head\": \"${head}\"}"
   response=$(curl -sSL -H "$GITHUB_API_HEADER" -H "Authorization: token ${GITHUB_TOKEN}" "$GITHUB_API_URI/repos/$GITHUB_REPOSITORY/pulls" -d "$data")
   echo "${response}"
-}
+  }

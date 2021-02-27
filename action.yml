@@ -5,15 +5,13 @@ inputs:
    GITHUB_TOKEN:
      description: 'Github token'
      required: true
-   repo:
-     description: 'Repository'
-     required: true
    dir:
       description: 'Directory'
       required: true
    base_branch:
       description: 'Github token'
-      required: true
+      required: false
+      default: 'develop'
    days_old:
       description: 'Days old to delete'
       required: true
@@ -22,7 +20,6 @@ runs:
    image: 'Dockerfile'
    args:
       - ${{ inputs.GITHUB_TOKEN }}
-      - ${{ inputs.repo }}
       - ${{ inputs.dir }}
       - ${{ inputs.base_branch }}
       - ${{ inputs.days_old }}
