@@ -6,7 +6,7 @@ GITHUB_API_HEADER="Accept: application/vnd.github.v3+json"
 github::create_pr(){
   base_branch="$1"
   head="$2"
-  data="{\"base\":\"${base_branch}\",\"head\": \"${head}\"}"
+  data="{\"title\":\"Delete old files\",\"base\":\"${base_branch}\",\"head\": \"${head}\"}"
   response=$(curl -sSL -H "$GITHUB_API_HEADER" -H "Authorization: token ${GITHUB_TOKEN}" "$GITHUB_API_URI/repos/$GITHUB_REPOSITORY/pulls" -d "$data")
   echo "${response}"
 }
