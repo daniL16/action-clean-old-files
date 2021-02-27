@@ -25,7 +25,8 @@ done;
 git add . ;
 git -c user.name="GitHub Actions" -c user.email="actions@github.com" \
         commit -m "Delete old migrations" \
-        --author="${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>" 
+git push --set-upstream origin "HEAD:delete_old_migrations";
+
 github::create_pr $3 'delete_old_migrations'
 
 }
