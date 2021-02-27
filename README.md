@@ -1,4 +1,4 @@
-# action-notify-rocketChat
+# action-clean-old-files
 
 <p align="center">
   Delete old files from a directory. This action deletes the files that meet the imposed conditions and performs a pull request to the base branch.
