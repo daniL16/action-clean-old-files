@@ -7,8 +7,9 @@ export DIR="$2"
 export DAYS="$4"
 
 now=$(date -d 'now' +%s)
+branch_name=delete_old_migrations_${now}
 
-git checkout -b delete_old_migrations_${now};
+git checkout -b ${branch_name};
 
 # borrar los archivos con más de x dias de antiguedad
 cd ${DIR};
@@ -29,6 +30,6 @@ git -c user.name="GitHub Actions" -c user.email="actions@github.com" \
         commit -m "Delete old migrations" ;
 git push --set-upstream origin "HEAD:delete_old_migrations";
 
-github::create_pr $3 'delete_old_migrations' $5
+github::create_pr $3 ${branch_name} $5
 
 }
