@@ -10,7 +10,7 @@ export PR_TITLE="$3"
 now=$(date -d 'now' +%s)
 
 git fetch --all;
-git checkout -d delete_old_migrations_${now};
+git checkout -b delete_old_migrations_${now};
 git pull;
 
 # borrar los archivos con más de x dias de antiguedad
