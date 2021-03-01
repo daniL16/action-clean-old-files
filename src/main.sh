@@ -8,7 +8,7 @@ export DAYS="$4"
 export PR_TITLE="$3"
 
 git fetch --all;
-git checkout -b delete_old_migrations;
+git checkout delete_old_migrations;
 git pull;
 
 # borrar los archivos con más de x dias de antiguedad
