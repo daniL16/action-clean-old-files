@@ -24,6 +24,7 @@ do
 done;
 
 git fetch --all;
+git pull;
 git add . ;
 git -c user.name="GitHub Actions" -c user.email="actions@github.com" \
         commit -m "Delete old migrations" ;
