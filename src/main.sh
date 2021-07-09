@@ -9,6 +9,7 @@ export DAYS="$4"
 now=$(date -d 'now' +%s)
 branch_name=delete_old_migrations_${now}
 
+git checkout develop;
 git checkout -b ${branch_name};
 
 # borrar los archivos con más de x dias de antiguedad
